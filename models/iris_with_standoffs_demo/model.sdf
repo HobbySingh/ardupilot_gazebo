@@ -33,13 +33,14 @@
           <izz>0.0001</izz>
         </inertia>
       </inertial>
-    <sensor name="chase_cam" type="camera">
-      <pose>-2 0 0.6 0 0.37 0</pose>
+    <sensor name="cam" type="camera">
+      <pose>0 0 0.3 0 0.37 0</pose>
       <camera>
         <horizontal_fov>1.2</horizontal_fov>
         <image>
           <width>1920</width>
           <height>1080</height>
+          <format>R8G8B8</format>
         </image>
         <clip>
           <near>0.1</near>
@@ -48,7 +49,16 @@
       </camera>
       <always_on>0</always_on>
       <update_rate>60</update_rate>
-      <visualize>true</visualize>
+      <visualize>true</visualize>    
+      
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>camera_on_quad</cameraName>
+        <imageTopicName>images</imageTopicName>
+        <cameraInfoTopicName>cam_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+      </plugin>      
     </sensor>
   </link>
 
