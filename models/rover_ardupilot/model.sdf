@@ -3,7 +3,7 @@
   <model name="rover_ardupilot">
     <pose>0 0 0.5 0 0 0</pose>
     <include>
-      <uri>model://husky</uri>
+      <uri>model://mars_rover</uri>
       <pose>0 0 0 0 0 0</pose>
     </include>
 
@@ -37,7 +37,7 @@
   </link>
     <joint name="camera_mount" type="fixed">
       <child>cam_link</child>
-      <parent>husky::base_link</parent>
+      <parent>mars_rover::base_link</parent>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -70,7 +70,7 @@
     </link>
     <joint name='imu_joint' type='revolute'>
       <child>imu_link</child>
-      <parent>husky::base_link</parent>
+      <parent>mars_rover::base_link</parent>
       <axis>
         <xyz>1 0 0</xyz>
         <limit>
@@ -116,7 +116,7 @@
         <i_min>0</i_min>
         <cmd_max>10</cmd_max>
         <cmd_min>-10</cmd_min>
-        <jointName>husky::front_left_joint</jointName>
+        <jointName>mars_rover::front_left_joint</jointName>
         <multiplier>70</multiplier>
       </control>
       <control channel="2">
@@ -129,7 +129,7 @@
         <i_min>0</i_min>
         <cmd_max>10</cmd_max>
         <cmd_min>-10</cmd_min>
-        <jointName>husky::front_right_joint</jointName>
+        <jointName>mars_rover::front_right_joint</jointName>
         <multiplier>70</multiplier>
       </control>
       <control channel="0">
@@ -142,7 +142,7 @@
         <i_min>0</i_min>
         <cmd_max>10</cmd_max>
         <cmd_min>-10</cmd_min>
-        <jointName>husky::back_left_joint</jointName>
+        <jointName>mars_rover::back_left_joint</jointName>
         <multiplier>70</multiplier>
       </control>
       <control channel="2">
@@ -155,7 +155,7 @@
         <i_min>0</i_min>
         <cmd_max>10</cmd_max>
         <cmd_min>-10</cmd_min>
-        <jointName>husky::back_right_joint</jointName>
+        <jointName>mars_rover::back_right_joint</jointName>
         <multiplier>70</multiplier>
       </control>
     </plugin>

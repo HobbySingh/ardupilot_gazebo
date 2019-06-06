@@ -1,0 +1,15 @@
+
+1. gazebo --verbose iris_rover_ardupilot.world
+2. sim_vehicle.py -f gazebo-iris --console -I0
+3. sim_vehicle.py -f gazebo-rover --console -I1
+4. roslaunch multi_vehicle.launch
+5. rqt( to visualize image)
+
+Stationary Target
+6. rosrun quadcopter kalman_filter_pi.py
+9. rosrun test timer_test_vision_vertland_stationary.py 
+
+Moving Target
+6. rosrun quadcopter kalman_filter_pi.py
+7. rosrun test timer_test_vision_vertland_moving_new_integral_orig.py
+
